@@ -1,74 +1,37 @@
-# template
+# gemdocs
+
+Generate and view documentation for a Ruby gem
 
 By Rémino Rem <https://remino.net/>
 
-Short description of app or project.
+<https://github.com/remino/gemdocs>
 
-[Docs](https://example.com/) | [Demo](https://example.com/) |
-[Code](https://example.com/) | [Download](https://example.com/)
+<!-- mtoc-start -->
 
-- [About](#about)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
+* [About](#about)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+
+<!-- mtoc-end -->
 
 ## About
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Script for the post-popularity era of Ruby, for its crumbling ecosystem.
+`gem server` no longer works. [RubyDoc.info](https://www.rubydoc.info) often
+timeouts. Just run this script to generate documentation for a specific gem with
+`rdoc` and start `httpd` to view it in a browser.
 
-Longer description of product.
-
-[Back to top](#template)
-
-### Built With
-
-- [Node.js](https://nodejs.org/)
-- etc.
-
-[Back to top](#template)
+[Back to top](#gemdocs)
 
 <!-- GETTING STARTED -->
 
-## Getting Started
-
-### Prerequisites
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API'
-   ```
-
-[Back to top](#template)
-
 ## Usage
 
-Example usage of app or project.
+Run `gemdocs` for details.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-[Back to top](#template)
+[Back to top](#gemdocs)
 
 ## Contributing
 
@@ -86,24 +49,16 @@ create a pull request. You can also simply open an issue with the tag
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-[Back to top](#template)
+[Back to top](#gemdocs)
 
 ## License
 
 Distributed under the ISC License. See `LICENSE.txt` for more information.
 
-[Back to top](#template)
+[Back to top](#gemdocs)
 
 ## Contact
 
 Rémino Rem <https://remino.net/>
 
-[Back to top](#template)
-
-## Acknowledgments
-
-- []()
-- []()
-- []()
-
-[Back to top](#template)
+[Back to top](#gemdocs)

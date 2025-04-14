@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+[ $# -lt 1 ] && echo "Usage: gemdocs GEMNAME" && exit 1
+
+GEM="$1"
+
+GEM_DIR="$(bundle show "$GEM")"
+
+if [ -z "$GEM_DIR" ]; then
+	echo "❌ Gem $GEM not found. Please install it first."
+	exit 1
+fi
+
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+DOC_DIR="$XDG_DATA_HOME/gemdocs/$GEM"
+
+mkdir -p "$(dirname "$DOC_DIR")"
+
+if [ ! -d "$DOC_DIR" ]; then
+	echo "🔧 Generating docs for $GEM..."
+	rdoc -f html -o "$DOC_DIR" "$GEM_DIR"
+else
+	echo "✅ Using cached docs at $DOC_DIR"
+fi
+
+echo "🚀 Serving docs for $GEM at http://localhost:8808"
+ruby -run -e httpd "$DOC_DIR" -p 8808 &
+SERVER_PID=$!
+
+sleep 1
+command -v xdg-open > /dev/null && xdg-open http://localhost:8808 || open http://localhost:8808
+
+trap "kill $SERVER_PID" EXIT
+wait $SERVER_PID
